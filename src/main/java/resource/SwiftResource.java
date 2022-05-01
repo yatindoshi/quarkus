@@ -29,7 +29,7 @@ public class SwiftResource {
     }
 
     @GET
-    @Produces(MediaType.SERVER_SENT_EVENTS)
+    @Produces(MediaType.APPLICATION_JSON)
     public Multi<Message> getSwiftMessages() {
         return messageService.getMessages();
     }

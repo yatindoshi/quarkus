@@ -1,5 +1,6 @@
 package service;
 
+import io.smallrye.common.annotation.Blocking;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import model.Message;
@@ -15,7 +16,8 @@ public class MessageService {
         return Message.persist(message);
     }
 
-    public Multi<Message> getMessages(){
+    @Blocking
+    public Multi<Message> getMessages() {
         return Message.streamAll();
     }
 }
