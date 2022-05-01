@@ -15,7 +15,7 @@ public class SecretConfigSourceFactory implements ConfigSourceFactory {
     public Iterable<ConfigSource> getConfigSources(ConfigSourceContext configSourceContext) {
         var password = configSourceContext.getValue("quarkus.datasource.password").getValue();
         if (password.startsWith("Encoded")) {
-            password = "Hiymd123";
+            password = "admin123";
         }
         var map = new HashMap<String, String>();
         map.put("quarkus.datasource.password", password);
